@@ -6,8 +6,10 @@ const initialState = {
 
 export const oilPriceReducer = (state=initialState, action) => {
 	if(action.type === GET_OIL_PRICE_SUCCESS ){
-		
-		return action;
+
+		return Object.assign({},state,{
+			price: action.data
+		});
 	}
 	console.log('action',action)
 	console.log('action reducer',action.data)

@@ -9,9 +9,10 @@ export class Home extends React.Component {
 	}
 
 	render(){
+		const {price} = this.props;
 		return (
 				<div>
-				opps
+				{price}
 				</div>
 			);
 	}

@@ -4,17 +4,16 @@ export const FETCH_OIL_PRICE_SUCCESS = 'FETCH_OIL_PRICE_SUCCESS';
 export const getOilPrice = () => dispatch => {
 	fetch(API_URL)    
 	.then(response =>{
-		console.log('response', response)
       return response.json();
     })
     .then(myJson =>{
-    	console.log('myJson',myJson.dataset.data[0][1]);
       return myJson.dataset.data[0][1];
     }).then(data => {
     	console.log('dispatch',data)
     	dispatch(getOilPriceSuccess(data));
     }).catch(err => {
     	console.log('err',err)
+    	dispatch(fetchOilPriceFailure());
     });
 };
 
@@ -27,8 +26,7 @@ export const getOilPriceSuccess = data => ({
 export const FETCH_OIL_PRICE_FAILURE = 'FETCH_OIL_PRICE_FAILURE';
 export const fetchOilPriceFailure = (data) => {
 	return {
-		type: FETCH_OIL_PRICE_FAILURE,
-		data
+		type: FETCH_OIL_PRICE_FAILURE
 	};
 };
 /*
