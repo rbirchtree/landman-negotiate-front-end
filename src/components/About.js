@@ -3,13 +3,25 @@ import { getWeather } from '../actions';
 import React from 'react';
 
 
-export class Board extends React.Component {
+export class About extends React.Component {
 	componentDidMount(){
-		this.props.dispatch(setWeather());
+		this.props.dispatch(getWeather());
+	}
+
+	render(){
+		return(
+			<div>
+				About
+			</div>
+			)
 	}
 }
 
-export default About
+const mapStateToProps = state => ({
+	weather: state.weather
+});
+
+export default connect(mapStateToProps)(About);
 
 
 
