@@ -1,22 +1,30 @@
-import { API_URL } from '../config';
+const API_URL = 'https://www.quandl.com/api/v3/datasets/CHRIS/ICE_T1.json?api_key=mHQ72VrY6ydQpb8fTkuV';
 
-export const getWeather = () => dispatch => {
-	fetch(API_URL)
-		.then(res => {
-			if (!res.ok){
-				return Promise.reject(res.status)
-			}
-			return res.json();
-		})
-		.then(data => {
-			console.log('data',data)
-			//dispatch(fetchWeatherSuccess(data));
-		});
+export const FETCH_OIL_PRICE_SUCCESS = 'FETCH_OIL_PRICE_SUCCESS';
+export const fetchOilPriceSuccess = (data) => ({
+	type:FETCH_OIL_PRICE_SUCCESS,
+	data
+});
+
+export const FETCH_OIL_PRICE_FAILURE = 'FETCH_OIL_PRICE_FAILURE';
+export const fetchOilPriceFailure = (data) => {
+	return {
+		type: FETCH_OIL_PRICE_FAILURE,
+		data
+	};
+};
+
+export const getOilPrice = () => dispatch => {
+	 fetch(API_URL)
+    .then(response =>{
+      return response.json();
+    })
+    .then(myJson =>{
+    		console.log('myJson',myJson)
+      return myJson.dataset.data[0][1];
+      //2/18 test tomorrow 2/19
+    });
 };
 
 
-export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS';
-export const fetchWeatherSuccess = (data) => ({
-	type:FETCH_WEATHER_SUCCESS,
-	data
-});
+

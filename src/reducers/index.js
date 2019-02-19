@@ -1,11 +1,11 @@
-import { FETCH_WEATHER_SUCCESS } from '../actions';
+import { FETCH_OIL_PRICE_SUCCESS } from '../actions';
 
 const initialState = {
-	weather: "Sunny"
+	price: 60
 };
 
-export const weatherReducer = (state=initialState, action) => {
-	if(action.type === FETCH_WEATHER_SUCCESS ){
+export const oilPriceReducer = (state=initialState, action) => {
+	if(action.type === FETCH_OIL_PRICE_SUCCESS ){
 		console.log('action',action)
 		return action;
 	}

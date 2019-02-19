@@ -1,12 +1,8 @@
 import { connect } from 'react-redux';
-import { getWeather } from '../actions';
 import React from 'react';
 
 
-export class About extends React.Component {
-	componentDidMount(){
-		this.props.dispatch(getWeather());
-	}
+export default class About extends React.Component {
 
 	render(){
 		return(
@@ -16,14 +12,3 @@ export class About extends React.Component {
 			)
 	}
 }
-
-const mapStateToProps = state => ({
-	weather: state.weather
-});
-
-export default connect(mapStateToProps)(About);
-
-
-
-//https://home.openweathermap.org/api_keys
-

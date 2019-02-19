@@ -8,9 +8,9 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 
-import { weatherReducer } from './reducers';
+import { oilPriceReducer } from './reducers';
 
-const store = createStore(weatherReducer, applyMiddleware(thunk));
+const store = createStore(oilPriceReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
 	<Provider store={store}>
