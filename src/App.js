@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container-fullwidth">
+        <div className="full-width container">
           <Navbar/>
           <Banner/>
           <Switch>
@@ -31,6 +31,7 @@ class App extends Component {
 
 export default App;
 // footer hiring contact info
+//className="container-fullwidth"
 // remove live search later
 //get an API for oil and gas info
 //boostrap
