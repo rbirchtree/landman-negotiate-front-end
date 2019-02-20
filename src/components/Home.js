@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { getOilPrice } from '../actions';
+import oilPump from '../img/oil_pump_udo.jpg';
+
 
 export class Home extends React.Component {
 	componentDidMount(){
@@ -13,6 +15,7 @@ export class Home extends React.Component {
 		return (
 				<div>
 				{price}
+				<img src={oilPump} alt="Fenced in oil pump."/>
 				</div>
 			);
 	}
