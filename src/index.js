@@ -14,6 +14,6 @@ const store = createStore(oilPriceReducer, composeEnhancers(applyMiddleware(thun
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<App className="container"/>
 	</Provider>
 	, document.getElementById('root'));
