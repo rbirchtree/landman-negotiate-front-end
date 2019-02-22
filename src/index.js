@@ -4,10 +4,10 @@ import {reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-
 import { oilPriceReducer } from './reducers';
 import './index.css';
 import App from './App';
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
 const store = createStore(oilPriceReducer, composeEnhancers(applyMiddleware(thunk)));
