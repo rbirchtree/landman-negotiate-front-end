@@ -1,25 +1,124 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 
-const Consultation = () => {
+const Consultation = (props) => {
+	const {handleSubmit,pristine,reset,submitting} = props;
 	return (
-		<form>
-		  <div className="form-group">
-		    <label htmlFor="exampleInputEmail1">Email address</label>
-		    <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email"/>
-		    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+		<form onSubmit={handleSubmit}>
+		 <div className="row">
+		 <div className="col-md-6">
+		  <label>First Name</label>
+		  <div>
+		   <Field
+		    name="firstName"
+		    component="input"
+		    type="text"
+		    placeholder="First Name"
+		    />
 		  </div>
-		  <div className="form-group">
-		    <label htmlFor="exampleInputPassword1">Password</label>
-		    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+		 </div>
+		 <div>
+		  <label>Last Name</label>
+		  <div>
+		   <Field
+		    name="lastName"
+		    component="input"
+		    type="text"
+		    placeholder="Last Name"
+		    />
 		  </div>
-		  <div className="form-group form-check">
-		    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-		    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+		 </div>
+		 </div>
+		 <div className="row">
+		 <div className="col-md-6">
+		  <label>Street Address</label>
+		  <div>
+		   <Field
+		    name="streetAddress"
+		    component="input"
+		    type="text"
+		    placeholder="Street Address"
+		    />
 		  </div>
-		  <button type="submit" className="btn btn-primary">Submit</button>
+		 </div>
+		 <div>
+		  <label>Suite Number</label>
+		  <div>
+		   <Field
+		    name="suiteNumber"
+		    component="input"
+		    type="text"
+		    placeholder="Suite Number"
+		    />
+		  </div>
+		 </div>
+		 </div>
+		 <div>
+		  <label>City</label>
+		  <div>
+		   <Field
+		    name="city"
+		    component="input"
+		    type="text"
+		    placeholder="City"
+		    />
+		  </div>
+		 </div>
+		 <div>
+		  <label>State</label>
+		  <div>
+		   <Field
+		    name="state"
+		    component="input"
+		    type="text"
+		    placeholder="State"
+		    />
+		  </div>
+		 </div>
+		 <div>
+		  <label>Zip Code</label>
+		  <div>
+		   <Field
+		    name="zipCode"
+		    component="input"
+		    type="number"
+		    placeholder="Zip Code"
+		    />
+		  </div>
+		 </div>
+		 <div>
+		  <label>Phone Number</label>
+		  <div>
+		   <Field
+		    name="phoneNumber"
+		    component="input"
+		    type="text"
+		    placeholder="Phone Number"
+		    />
+		  </div>
+		 </div>
+		 <div>
+		  <label>E-Mail</label>
+		  <div>
+		   <Field
+		    name="email"
+		    component="input"
+		    type="text"
+		    placeholder="E-Mail"
+		    />
+		  </div>
+		 </div>
+		 <div>
+		 <label>Notes</label>
+		 <div>
+		 	<Field name="notes" component="textarea"/>
+		 </div>
+		 </div>
+		 <button type="submit" disabled={pristine || submitting}>
+		 	Submit
+		 </button>
 		</form>
 		)
 };
 
-export default Consultation;
+export default reduxForm({form: 'consultation'})(Consultation);
