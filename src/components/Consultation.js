@@ -1,8 +1,10 @@
 import React from 'react';
-import {Field, reduxForm} from 'redux-form';
-//className="consultForm"
-const Consultation = (props) => {
-	const {handleSubmit,pristine,reset,submitting} = props;
+import {Field, reduxForm, focus} from 'redux-form';
+//import {submission} from '../actions/auth';
+
+class Consultation extends React.Component{
+	render(){
+	const {handleSubmit,pristine,reset,submitting} = this.props;
 	return (
 		<form  className="consultForm" onSubmit={handleSubmit}>
 		 <div className="row">
@@ -133,8 +135,8 @@ const Consultation = (props) => {
 		 <div className="row">
 		 <div className="col-sm-4">
 		 </div>
-		 <div className="col-sm-4">
-		 <button type="submit" disabled={pristine || submitting}>
+		 <div className="col-md-4 text-center">
+		 <button className="btn btn-primary" type="submit" disabled={pristine || submitting}>
 		 	Submit
 		 </button>
 		 </div>
@@ -143,6 +145,7 @@ const Consultation = (props) => {
 		 </div>
 		</form>
 		)
-};
+	}
+}
 
 export default reduxForm({form: 'consultation'})(Consultation);
