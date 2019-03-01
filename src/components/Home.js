@@ -22,7 +22,6 @@ export class Home extends React.Component {
 						 <iframe src="https://app.drillinginfo.com/drc/?widget=true" frameborder="0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0"></iframe>
 						 </div>
 						<div className='col-sm-8'><img className='img-fluid rounded' src={oilPump} alt='Fenced in oil pump.'/></div>
-
 					</div>
 			);
 	}
