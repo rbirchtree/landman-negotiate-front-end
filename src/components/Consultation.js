@@ -92,7 +92,7 @@ const Consultation = (props) => {
 		   <Field
 		    name="zipCode"
 		    component="input"
-		    type="number"
+		    type="text"
 		    placeholder="Zip Code"
 		    />
 		  </div>
