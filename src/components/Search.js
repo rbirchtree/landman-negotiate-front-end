@@ -8,5 +8,5 @@ const Search = () => {
 		</div>
 		)
 };
-
+//search customers
 export default Search;

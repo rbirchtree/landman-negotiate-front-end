@@ -8,7 +8,7 @@ import Home from './components/Home';
 import Consultation from './components/Consultation';
 import Search from './components/Search';
 import './App.css';
-
+//<Route path='/landmenlogin' component={LandmenLogin}/>
 class App extends Component {
   render() {
     return (
@@ -21,6 +21,7 @@ class App extends Component {
             <Route path='/about' component={About}/>
             <Route path='/consultation' component={Consultation}/>
             <Route path='/search' component={Search}/>
+            
           </Switch>
           <Footer/>
         </div>
@@ -30,8 +31,3 @@ class App extends Component {
 }
 
 export default App;
-// footer hiring contact info
-//className="container-fullwidth"
-// remove live search later
-//get an API for oil and gas info
-//boostrap
