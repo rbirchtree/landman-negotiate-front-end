@@ -1,14 +1,16 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-
+//className="consultForm"
 const Consultation = (props) => {
 	const {handleSubmit,pristine,reset,submitting} = props;
 	return (
-		<form onSubmit={handleSubmit}>
+		<form  className="consultForm" onSubmit={handleSubmit}>
 		 <div className="row">
-		 <div className="col-md-6">
+		 <div className="col-md-4">
+		 </div>
+		 <div >
 		  <label>First Name</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="firstName"
 		    component="input"
@@ -19,7 +21,7 @@ const Consultation = (props) => {
 		 </div>
 		 <div>
 		  <label>Last Name</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="lastName"
 		    component="input"
@@ -30,9 +32,11 @@ const Consultation = (props) => {
 		 </div>
 		 </div>
 		 <div className="row">
-		 <div className="col-md-6">
+		 <div className="col-md-4">
+		 </div>
+		 <div >
 		  <label>Street Address</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="streetAddress"
 		    component="input"
@@ -43,7 +47,7 @@ const Consultation = (props) => {
 		 </div>
 		 <div>
 		  <label>Suite Number</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="suiteNumber"
 		    component="input"
@@ -53,9 +57,12 @@ const Consultation = (props) => {
 		  </div>
 		 </div>
 		 </div>
-		 <div>
+		 <div className="row">
+		 <div className="col-md-4">
+		 </div>
+		 <div >
 		  <label>City</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="city"
 		    component="input"
@@ -66,7 +73,7 @@ const Consultation = (props) => {
 		 </div>
 		 <div>
 		  <label>State</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="state"
 		    component="input"
@@ -75,9 +82,13 @@ const Consultation = (props) => {
 		    />
 		  </div>
 		 </div>
+		 </div>
+		 <div className="row">
+		 <div className="col-md-4">
+		 </div>
 		 <div>
 		  <label>Zip Code</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="zipCode"
 		    component="input"
@@ -88,7 +99,7 @@ const Consultation = (props) => {
 		 </div>
 		 <div>
 		  <label>Phone Number</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="phoneNumber"
 		    component="input"
@@ -97,9 +108,13 @@ const Consultation = (props) => {
 		    />
 		  </div>
 		 </div>
+		 </div>
+		 <div className="row">
+		 <div className="col-md-4">
+		 </div>
 		 <div>
 		  <label>E-Mail</label>
-		  <div>
+		  <div className="col-md-4">
 		   <Field
 		    name="email"
 		    component="input"
@@ -110,13 +125,22 @@ const Consultation = (props) => {
 		 </div>
 		 <div>
 		 <label>Notes</label>
-		 <div>
+		 <div className="col-md-4">
 		 	<Field name="notes" component="textarea"/>
 		 </div>
 		 </div>
+		 </div>
+		 <div className="row">
+		 <div className="col-sm-4">
+		 </div>
+		 <div className="col-sm-4">
 		 <button type="submit" disabled={pristine || submitting}>
 		 	Submit
 		 </button>
+		 </div>
+		 <div className="col-sm-4">
+		 </div>
+		 </div>
 		</form>
 		)
 };
