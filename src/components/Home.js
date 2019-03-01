@@ -19,7 +19,9 @@ export class Home extends React.Component {
 						<div className='col-sm-4'>Oil prices change daily, don't you want the best deal for your rights? 
 						 Consult with us today! The current price of WTI is ${price[0]} <span className={diff >= 0 ? 'text-success': 'text-danger'}>
 						 {diff > 0 ? '+': '-'}{diff}</span>
-						 <iframe src="https://app.drillinginfo.com/drc/?widget=true" frameborder="0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+						 <div className="embed-responsive embed-responsive-4by3">
+						 <iframe src="https://app.drillinginfo.com/drc/?widget=true" scrolling="no" className="embed-responsive-item"  ></iframe>
+						 </div>
 						 </div>
 						<div className='col-sm-8'><img className='img-fluid rounded' src={oilPump} alt='Fenced in oil pump.'/></div>
 					</div>
@@ -32,3 +34,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Home);
+//<iframe src="https://app.drillinginfo.com/drc/?widget=true" frameborder="0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0"></iframe>
