@@ -12,11 +12,14 @@ export class Home extends React.Component {
 
 	render(){
 		const {price} = this.props;
+		const diff = (price[0]-price[1]).toFixed(2);
+		
 		return (
-					<div className="row">
-						<div className="col-sm-4">Oil prices change daily, don't you want the best deal for your rights? 
-						 Consult with us today! The current price of WTI is ${price.toFixed(2)}</div>
-						<div className="col-sm-8"><img className="img-fluid rounded" src={oilPump} alt="Fenced in oil pump."/></div>
+					<div className='row'>
+						<div className='col-sm-4'>Oil prices change daily, don't you want the best deal for your rights? 
+						 Consult with us today! The current price of WTI is ${price[0]} <span className={diff >= 0 ? 'text-success': 'text-danger'}>
+						 {diff > 0 ? '+': '-'}{diff}</span></div>
+						<div className='col-sm-8'><img className='img-fluid rounded' src={oilPump} alt='Fenced in oil pump.'/></div>
 					</div>
 			);
 	}

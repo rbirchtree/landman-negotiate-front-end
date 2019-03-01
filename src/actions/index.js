@@ -7,12 +7,11 @@ export const getOilPrice = () => dispatch => {
       return response.json();
     })
     .then(myJson =>{
-      return myJson.dataset.data[0][1];
+      console.log(myJson.dataset.data[1][1],'data?')
+      return [myJson.dataset.data[0][1],myJson.dataset.data[1][1]];
     }).then(data => {
-    	console.log('dispatch',data)
     	dispatch(getOilPriceSuccess(data));
     }).catch(err => {
-    	console.log('err',err)
     	dispatch(fetchOilPriceFailure());
     });
 };
