@@ -7,19 +7,21 @@ import Banner from './components/Banner';
 import Home from './components/Home';
 import Consultation from './components/Consultation';
 import Search from './components/Search';
+import LandmenLogin from './components/LandmenLogin';
 import './App.css';
-//<Route path='/landmenlogin' component={LandmenLogin}/>
+
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="full-width container">
+        <div className='full-width container'>
           <Navbar/>
           <Banner/>
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/about' component={About}/>
             <Route path='/consultation' component={Consultation}/>
+            <Route path='/landmenlogin' component={LandmenLogin}/>
             <Route path='/search' component={Search}/>
           </Switch>
           <Footer/>

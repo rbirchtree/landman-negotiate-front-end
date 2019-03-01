@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
 	return (
-<div className="wrapper">
+<div className='footer'>
   
-  <footer className="footer">© 2018 Copyright: ex-Landmen</footer>
+  <footer className='container'>© 2018 Copyright: ex-Landmen</footer>
   </div>
 		)
 };
