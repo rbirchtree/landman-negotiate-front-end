@@ -3,6 +3,12 @@ import {Field, reduxForm, focus} from 'redux-form';
 //import {submission} from '../actions/auth';
 
 class Consultation extends React.Component{
+	onSubmit(values){
+		console.log(this.props)
+		console.log(values)
+		//return this.props.dispatch(consultation(v))
+	}
+
 	render(){
 	const {handleSubmit,pristine,reset,submitting} = this.props;
 	return (

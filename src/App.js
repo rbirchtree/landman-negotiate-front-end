@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import Banner from './components/Banner';
 import Home from './components/Home';
 import Consultation from './components/Consultation';
-import Search from './components/Search';
 import LandmenLogin from './components/LandmenLogin';
 import './App.css';
 
@@ -22,7 +21,6 @@ class App extends Component {
             <Route path='/about' component={About}/>
             <Route path='/consultation' component={Consultation}/>
             <Route path='/landmenlogin' component={LandmenLogin}/>
-            <Route path='/search' component={Search}/>
           </Switch>
           <Footer/>
         </div>
