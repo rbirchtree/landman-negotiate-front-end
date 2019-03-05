@@ -10,8 +10,13 @@ import App from './App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
-const store = createStore(oilPriceReducer, composeEnhancers(applyMiddleware(thunk)));
-
+const store = createStore(
+	combineReducers({
+	oilPriceReducer, 
+	form: formReducer
+	}),
+	composeEnhancers(applyMiddleware(thunk)));
+//authreducer
 ReactDOM.render(
 	<Provider store={store}>
 		<App className="container"/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink} from 'react-router-dom';
-//https://getbootstrap.com/docs/4.0/components/navbar/
+
 const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">			

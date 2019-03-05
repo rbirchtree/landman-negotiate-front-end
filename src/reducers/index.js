@@ -11,8 +11,6 @@ export const oilPriceReducer = (state=initialState, action) => {
 			price: action.data
 		});
 	}
-	console.log('action',action)
-	console.log('action reducer',action.data)
-	console.log('state reducer',state);
+	
 	return state;
 };

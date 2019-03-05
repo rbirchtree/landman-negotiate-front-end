@@ -18,7 +18,7 @@ export class Home extends React.Component {
 					<div className='row'>
 						<div className='col-sm-4'>Oil prices change daily, don't you want the best deal for your rights? 
 						 Consult with us today! The current price of WTI is ${price[0]} <span className={diff >= 0 ? 'text-success': 'text-danger'}>
-						 {diff > 0 ? '+': '-'}{diff}</span>
+						 {diff} {diff > 0 ? ' +': ' '}</span>
 						 <div className='embed-responsive embed-responsive-4by3'>
 						 <iframe src="https://app.drillinginfo.com/drc/?widget=true" scrolling="no" className="embed-responsive-item"  ></iframe>
 						 </div>
