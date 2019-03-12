@@ -52,6 +52,7 @@ export const setAuthToken = authToken => ({
 });
 
 export const login = (email, password) => dispatch => {
+    console.log('email password',email,password);
     dispatch(authRequest());
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
@@ -91,6 +92,7 @@ export const authSuccess = currentUser => ({
 
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
+    console.log('decodedToken.user',decodedToken.user)
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(authToken);

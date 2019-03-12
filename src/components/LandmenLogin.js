@@ -14,7 +14,7 @@ class LandmenLogin extends React.Component {
      }
 
   render() {
-    console.log('login',login)
+    
     let error;
     if(this.props.error){
         error = (

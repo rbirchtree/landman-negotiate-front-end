@@ -8,10 +8,15 @@ import oilPump from '../img/oil_pump_udo.jpg';
 export class Home extends React.Component {
 	componentDidMount(){
 		this.props.dispatch(getOilPrice());
+		console.log(this.props)
 	}
 
 	render(){
 		const {price} = this.props;
+		if (!price){
+
+			return(<div>Loading</div>)
+		}
 		const diff = (price[0]-price[1]).toFixed(2);
 		
 		return (
