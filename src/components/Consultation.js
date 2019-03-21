@@ -1,17 +1,31 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-
+import { login } from '../actions';
+import Input from './Input';
+//make login register client
+import {required, nonEmpty } from '../validators';
 
 class Consultation extends React.Component{
 	onSubmit(values){
-
+		return this.props.dispatch(login(values.firstName));
 		//return this.props.dispatch(consultation(v))
 	}
 
 	render(){
+	let error;
+	if (this.props.error){
+		error = (
+			<div className="form-error" aria-live="polite">
+				{this.props.error}
+			</div>
+			)
+	}
 	const {handleSubmit,pristine,reset,submitting} = this.props;
+
 	return (
-		<form  className='consultForm' onSubmit={handleSubmit}>
+		<form  className='consultForm' onSubmit={handleSubmit(values =>
+			this.onSubmit(values)
+			)}>
 		 <div className='row'>
 		 <div className='col-md-4'>
 		 </div>
@@ -20,134 +34,17 @@ class Consultation extends React.Component{
 		  <div className='col-md-4'>
 		   <Field
 		    name='firstName'
-		    component='input'
+		    component={Input}
 		    type='text'
 		    placeholder='First Name'
-		    />
-		  </div>
-		 </div>
-		 <div>
-		  <label>Last Name</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='lastName'
-		    component='input'
-		    type='text'
-		    placeholder='Last Name'
+		    validate={[required,nonEmpty]}
 		    />
 		  </div>
 		 </div>
 		 </div>
-		 <div className='row'>
-		 <div className='col-md-4'>
-		 </div>
-		 <div >
-		  <label>Street Address</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='streetAddress'
-		    component='input'
-		    type='text'
-		    placeholder='Street Address'
-		    />
-		  </div>
-		 </div>
-		 <div>
-		  <label>Suite Number</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='suiteNumber'
-		    component='input'
-		    type='text'
-		    placeholder='Suite Number'
-		    />
-		  </div>
-		 </div>
-		 </div>
-		 <div className='row'>
-		 <div className='col-md-4'>
-		 </div>
-		 <div >
-		  <label>City</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='city'
-		    component='input'
-		    type='text'
-		    placeholder='City'
-		    />
-		  </div>
-		 </div>
-		 <div>
-		  <label>State</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='state'
-		    component='input'
-		    type='text'
-		    placeholder='State'
-		    />
-		  </div>
-		 </div>
-		 </div>
-		 <div className='row'>
-		 <div className='col-md-4'>
-		 </div>
-		 <div>
-		  <label>Zip Code</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='zipCode'
-		    component='input'
-		    type='text'
-		    placeholder='Zip Code'
-		    />
-		  </div>
-		 </div>
-		 <div>
-		  <label>Phone Number</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='phoneNumber'
-		    component='input'
-		    type='text'
-		    placeholder='Phone Number'
-		    />
-		  </div>
-		 </div>
-		 </div>
-		 <div className='row'>
-		 <div className='col-md-4'>
-		 </div>
-		 <div>
-		  <label>E-Mail</label>
-		  <div className='col-md-4'>
-		   <Field
-		    name='email'
-		    component='input'
-		    type='text'
-		    placeholder='E-Mail'
-		    />
-		  </div>
-		 </div>
-		 <div>
-		 <label>Notes</label>
-		 <div className='col-md-4'>
-		 	<Field name='notes' component='textarea'/>
-		 </div>
-		 </div>
-		 </div>
-		 <div className='row'>
-		 <div className='col-sm-4'>
-		 </div>
-		 <div className='col-md-4 text-center'>
-		 <button className='btn btn-primary' type='submit' disabled={pristine || submitting}>
-		 	Submit
+		 <button disabled={this.props.pristine || this.props.submitting}>
+		 	Log in
 		 </button>
-		 </div>
-		 <div className='col-sm-4'>
-		 </div>
-		 </div>
 		</form>
 		)
 	}
