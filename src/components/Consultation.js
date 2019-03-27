@@ -18,13 +18,6 @@ export default class Consultation extends React.Component{
 					  email: '',
 					  notes: ''
 			};
-
-/*		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);*/
-	}
-
-	handleChange(event){
-		this.setState({value: event.target.value});
 	}
 
 	setfirstName(firstName){
@@ -89,11 +82,23 @@ export default class Consultation extends React.Component{
 
 	handleSubmit(event){
 		event.preventDefault();
-		alert(this.state.firstName);		
+		let formData = this.state;
+			fetch('https://www.google.com/', {
+				method: 'POST',
+				headers:{
+					'Content-Type' : 'application/json'
+				},
+				body: JSON.stringify({
+					formData
+				})
+			}).then( res => res.json())
+			.catch(err => {
+				console.log('err',err);
+			});	
 	}
 
 	render(){
-		console.log(this.state)
+		
 	return (
 		<form  className='consultForm' onSubmit={(e) =>this.handleSubmit(e)}>
 		 <div className='row'>
