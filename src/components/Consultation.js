@@ -100,7 +100,11 @@ export default class Consultation extends React.Component{
 	}
 
 	render(){
-		
+	
+	const labelStyle = {
+    	display: 'block'
+    };
+
 	return (
 		<form  className='consultForm' onSubmit={(e) =>this.handleSubmit(e)}>
 		 <div className='row'>
@@ -158,7 +162,7 @@ export default class Consultation extends React.Component{
 		    />
 		  </div>
 		  <div className='col-md-6'>
-		  	<label>Notes</label>
+		  	<label style={labelStyle}>Notes</label>
 		  	<textarea
 		  		value={this.state.value}
 		    	onChange={value => this.setNotes(value)}
@@ -166,9 +170,11 @@ export default class Consultation extends React.Component{
 		   </div>
 		 </div>
 		 <div className='row'>
-		  <button >
+		  <div className='col-md-12'>
+		   <button >
 		 	Submit
-		  </button>
+		   </button>
+		  </div>
 		 </div>
 		</form>
 		)
