@@ -82,14 +82,16 @@ export default class Consultation extends React.Component{
 
 	handleSubmit(event){
 		event.preventDefault();
-		let formData = this.state;
+		let { firstName, lastName, unit, streetAddress, city, USstate, zipCode, phoneNumber, email, notes} = this.state;
 			fetch('http://localhost:8080/api/contact', {
 				method: 'POST',
 				headers:{
 					'Content-Type' : 'application/json'
 				},
 				body: JSON.stringify({
-					formData
+					firstName, lastName, unit, streetAddress, 
+					city, USstate, zipCode, 
+					phoneNumber, email, notes
 				})
 			}).then( res => res.json())
 			.catch(err => {
