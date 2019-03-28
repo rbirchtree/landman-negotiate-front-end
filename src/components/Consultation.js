@@ -20,7 +20,7 @@ export default class Consultation extends React.Component{
 			};
 	}
 
-	setfirstName(firstName){
+	setFirstName(firstName){
 		this.setState({
 			firstName
 		});
@@ -83,7 +83,7 @@ export default class Consultation extends React.Component{
 	handleSubmit(event){
 		event.preventDefault();
 		let formData = this.state;
-			fetch('https://www.google.com/', {
+			fetch('http://localhost:8080/api/contact', {
 				method: 'POST',
 				headers:{
 					'Content-Type' : 'application/json'
